@@ -1,9 +1,8 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Comfly",
-  description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+  name: ".cc[Cloud Comfy]",
+  description: "Comfly meets cloud, fly through workflows unbound.",
   mainNav: [
     {
       title: "Home",

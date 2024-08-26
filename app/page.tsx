@@ -8,15 +8,18 @@ export default function IndexPage() {
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-2">
         <h1 className="text-5xl font-bold">
-          Comfly: Seamlessly Power Your ComfyUI Workflows with{" "}
-          <br className="hidden sm:inline" /> Cloud-Based GPU Resources
+          <span>
+            Com
+            <span style={{ textDecoration: "underline" }}>
+              f<span style={{ color: "red" }}>l</span>y
+            </span>
+          </span>
+          : Seamlessly Power Your <br className="hidden sm:inline" /> ComfyUI
+          Workflows with <br className="hidden sm:inline" /> Cloud-Based GPU
+          Resources
         </h1>
         <p className="max-w-[700px] text-lg text-muted-foreground">
-          Comfly enables ComfyUI users to effortlessly leverage powerful cloud
-          GPU resources, optimizing their workflows without the need for local
-          hardware. Experience enhanced performance and scalability as Comfly
-          takes your ComfyUI projects to the next level, making advanced
-          computations accessible and efficient.
+          ComfyUI meets cloud, fly through workflows unbound
         </p>
       </div>
       <div className="flex gap-4">
