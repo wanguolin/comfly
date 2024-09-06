@@ -26,5 +26,5 @@ jobs:
       working-directory: infra/docker/comfy-cli-base/cpu
       run: |
         cp -r $GITHUB_WORKSPACE/workflows .  
-        docker build -f Dockerfile.comfy-cli-install-workflows -t wanguolin/comfly:comfy-cli-ubuntu24.04-python3.11-cpu .
-        docker push wanguolin/comfly:comfy-cli-ubuntu24.04-python3.11-cpu
+        docker build -f Dockerfile.comfy-cli-install-workflows -t wanguolin/comfly:comfy-cli-install-workflows .
+        docker push wanguolin/comfly:comfy-cli-install-workflows
