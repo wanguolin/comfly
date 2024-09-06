@@ -22,9 +22,16 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and push Docker image
-      working-directory: infra/docker/comfy-cli-base/cpu
-      run: |
-        cp -r $GITHUB_WORKSPACE/workflows .  
-        docker build -f Dockerfile.comfy-cli-install-workflows -t wanguolin/comfly:comfy-cli-install-workflows .
-        docker push wanguolin/comfly:comfy-cli-install-workflows
+    - name: Copy workflows directory
+      working-directory: infra/docker/comfly-cli-base/cpu
+      run: cp -r $GITHUB_WORKSPACE/workflows .
+
+    - name: Build Docker image
+      working-directory: infra/docker/comfly-cli-base/cpu
+      run: docker build -f Dockerfile.comfy-cli-install-workflows -t wanguolin/comfly:comfy-cli-install-workflows .
+
+    - name: Push Docker image
+      if: success() 
+      working-directory: infra/docker/comfly-cli-base/cpu
+      run: docker push wanguolin/comfly:comfy-cli-install-workflows
+  

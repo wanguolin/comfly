@@ -3,7 +3,8 @@ FROM wanguolin/comfly:comfy-cli-ubuntu24.04-python3.11-cpu
 WORKDIR /root/comfy
 
 COPY workflows /root/comfy/workflows
-RUN source venv/bin/activate && \
-    find /root/comfy/workflows -name "*.json" -type f -exec echo "Processing {}" \; -exec comfy node install-deps --workflow {} \;
+RUN /bin/bash -c "source venv/bin/activate && \
+    find /root/comfy/workflows -name '*.json' -type f -exec echo 'Processing {}' \; -exec comfy node install-deps --workflow {} \;"
+
 
 ENTRYPOINT ["/bin/bash", "-c", "source /root/comfy/venv/bin/activate && python /root/comfy/ComfyUI/main.py --listen 0.0.0.0 --port 8188 --cpu"]
