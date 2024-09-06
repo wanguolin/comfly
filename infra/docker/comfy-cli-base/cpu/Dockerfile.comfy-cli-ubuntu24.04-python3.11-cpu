@@ -1,0 +1,16 @@
+FROM wanguolin/comfly:ubuntu24.04-python3.11-cpu
+
+WORKDIR /root/comfy
+
+RUN python3.11 -m venv venv && \
+    . venv/bin/activate && \
+    pip install --upgrade pip setuptools && \
+    pip install comfy-cli && \
+    comfy --skip-prompt install \
+        --fast-deps \
+        --skip-torch-or-directml \
+        --cpu && \
+    rm -rf $(pip cache dir) && \
+    rm -rf /root/.cache/pip
+
+# ENTRYPOINT ["/bin/bash", "-c", "source /path/to/your/venv/bin/activate && python /root/comfy/ComfyUI/main.py --cpu"]
