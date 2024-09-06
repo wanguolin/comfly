@@ -9,7 +9,7 @@ VARIANT="cpu"
 REPO_BASE="wanguolin/comfly"
 BASE_TAG="${BASE_OS}-python${PYTHON_VERSION}-${VARIANT}"
 COMFY_CLI_TAG="comfy-cli-${BASE_OS}-python${PYTHON_VERSION}-${VARIANT}"
-COMFY_CLI_INSTALL_WORKFLOWS_TAG="comfy-cli-install-workflows"
+COMFY_CLI_INSTALL_WORKFLOWS_TAG="comfy-cli-workflows-pre-install"
 
 # Build base image
 docker build -f "Dockerfile.${BASE_TAG}" -t "${REPO_BASE}:${BASE_TAG}" .
