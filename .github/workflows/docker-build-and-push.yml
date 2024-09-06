@@ -26,11 +26,11 @@ jobs:
       run: cp -r workflows infra/docker/comfy-cli-base/cpu
 
     - name: Build Docker image
-      working-directory: infra/docker/comfly-cli-base/cpu
+      working-directory: infra/docker/comfy-cli-base/cpu
       run: docker build -f Dockerfile.comfy-cli-install-workflows -t wanguolin/comfly:comfy-cli-install-workflows .
 
     - name: Push Docker image
       if: success() 
-      working-directory: infra/docker/comfly-cli-base/cpu
+      working-directory: infra/docker/comfy-cli-base/cpu
       run: docker push wanguolin/comfly:comfy-cli-install-workflows
   
