@@ -23,8 +23,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Copy workflows directory
-      working-directory: infra/docker/comfly-cli-base/cpu
-      run: cp -r $GITHUB_WORKSPACE/workflows .
+      run: cp -r workflows infra/docker/comfly-cli-base/cpu
 
     - name: Build Docker image
       working-directory: infra/docker/comfly-cli-base/cpu
