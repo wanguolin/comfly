@@ -25,5 +25,5 @@ jobs:
     - name: Build and push Docker image
       working-directory: infra/docker/comfly-cli-base/cpu
       run: |
-        docker build -f Dockerfile.comfy-cli-install-workflows -t wanguolin/comfly:comfy-cli-install-workflows .
-        docker push wanguolin/comfly:comfy-cli-install-workflows
+        docker build -f Dockerfile.comfy-cli-install-workflows -t wanguolin/comfly:comfy-cli-ubuntu24.04-python3.11-cpu .
+        docker push wanguolin/comfly:comfy-cli-ubuntu24.04-python3.11-cpu
